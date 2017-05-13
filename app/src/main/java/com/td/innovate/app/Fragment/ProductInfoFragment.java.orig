@@ -1,0 +1,104 @@
+package com.td.innovate.app.Fragment;
+
+import android.app.Activity;
+import android.net.Uri;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.support.v4.app.Fragment;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.td.innovate.app.Activity.MainViewPagerActivity;
+import com.td.innovate.app.Activity.PriceAPIDataActivity;
+import com.td.innovate.app.Adapter.StoreAdapter;
+import com.td.innovate.app.Model.Result;
+import com.td.innovate.app.R;
+
+import java.util.ArrayList;
+import com.koushikdutta.ion.Ion;
+
+public class ProductInfoFragment extends Fragment {
+
+    private TextView productNameTV;
+    private TextView productDescTV;
+    private ImageView productIV;
+    private Result mainResult;
+    private ArrayList<Result> myResults;
+
+
+    updateListData mCallback;
+
+    public interface updateListData {
+        public void onProductRequestData();
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_product_info, container, false);
+
+        if (myResults!=null) {
+            Log.d("[PRODUCT INFO FRAGMENT]", "RESULTS NOT NULL");
+        }
+
+        productNameTV = (TextView) view.findViewById(R.id.productNameTV);
+        productDescTV = (TextView) view.findViewById(R.id.product_desc_tv);
+        productIV = (ImageView)view.findViewById(R.id.product_imageview);
+
+        myResults = new ArrayList<Result>();
+
+        return view;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+//        myResults = MainViewPagerActivity.results;
+        mCallback.onProductRequestData();
+
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            mCallback = (updateListData) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString()
+                    + " must implement updateListData");
+        }
+    }
+
+    public void productUpdate(){
+        myResults.clear();
+        myResults.addAll(MainViewPagerActivity.results);
+
+        mainResult = myResults.get(0);
+<<<<<<< HEAD
+        if (mainResult.getName()!=null) {
+            productNameTV.setText(mainResult.getName());
+        }
+        if (mainResult.getName()!=null) {
+            productDescTV.setText(mainResult.getName());
+        } else {
+            productDescTV.setText("No description available");
+        }
+        if (mainResult.getName()!=null) {
+            Ion.with(productIV).load(mainResult.getImage);
+        }
+
+=======
+        productNameTV.setText(mainResult.getName());
+
+        productDescTV.setText("Put real info here!");
+>>>>>>> 507ff53785a06a2b9dc16d577c90c1c62232f778
+    }
+
+
+}

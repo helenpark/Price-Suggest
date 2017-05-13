@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_rect_offers_listview">
+
+<!-- 9E9E9E -->
+    <ImageView
+        android:id="@+id/listview_offers_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:padding="10dp"
+        android:src="@drawable/ic_launcher_test" />
+
+    <TextView
+        android:id="@+id/listview_offers_storename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:layout_toEndOf="@+id/listview_offers_image"
+        android:layout_toRightOf="@+id/listview_offers_image"
+        android:text="Store Name"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#e5e5e5" />
+
+    <TextView
+        android:id="@+id/listview_offers_store_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:text="$$$$"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#e5e5e5" />
+
+</RelativeLayout>

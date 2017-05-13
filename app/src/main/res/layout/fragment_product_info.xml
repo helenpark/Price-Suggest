@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.td.innovate.app.Fragment.ReviewsFragment">
+
+    <TextView
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:textSize="20dp"
+        android:maxLines="3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product Name"
+        android:id="@+id/productNameTV" />
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:textSize="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="5"
+        android:text="Product Description not available"
+        android:id="@+id/product_desc_tv" />
+
+    <ImageView
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="320dp"
+        android:id="@+id/productIV"
+        android:scaleType="fitXY"
+        />
+
+
+</LinearLayout>

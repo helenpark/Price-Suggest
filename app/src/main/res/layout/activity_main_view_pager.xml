@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/myViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/FlayoutIndicator" />
+
+    <FrameLayout
+        android:id="@+id/FlayoutIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+       <com.viewpagerindicator.IconPageIndicator
+            android:id="@+id/indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/logo"
+                android:layout_centerInParent="true" />
+
+            <ImageView
+                android:src="@drawable/logo"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/imageView2"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/imageView"
+                android:layout_alignStart="@+id/imageView"
+                android:layout_marginLeft="40dp" />
+
+
+            <ImageView
+                android:src="@drawable/logo"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/imageView3"
+                android:layout_alignParentTop="true"
+                android:layout_alignRight="@+id/imageView"
+                android:layout_marginRight="40dp" />
+        </RelativeLayout>
+    </FrameLayout>
+
+</RelativeLayout>
